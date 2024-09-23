@@ -1,10 +1,11 @@
 Flask==2.0.1
 joblib==1.1.0
-scikit-learn==1.0.1
-pandas==1.3.4
-numpy==1.21.2
-imblearn==0.0
-scipy==1.7.1
-shap==0.39.0  # For Task 3 (Explainability)
-lime==0.2.0.1  # For Task 3 (Explainability)
-gunicorn==20.1.0  # Heroku's default WSGI server
+scikit-learn==1.2.2  # Compatible with Python 3.11 and avoids distutils issues
+numpy==1.23.3        # Compatible version for scikit-learn
+pandas==1.5.3        # Commonly used for data preprocessing
+imblearn==0.10.1     # For SMOTE (imbalanced-learn package)
+gunicorn==20.1.0     # Required for Heroku to serve the app
+shap==0.41.0         # For explainability (XAI) using SHAP
+lime==0.2.0.1        # For explainability (XAI) using LIME
+matplotlib==3.7.1    # For data visualization and plots
+seaborn==0.12.2      # For enhanced statistical visualizations
