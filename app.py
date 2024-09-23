@@ -11,6 +11,10 @@ logging.basicConfig(level=logging.INFO)
 # Load your pre-trained model
 model = joblib.load('best_model.pkl')
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({"message": "Welcome to the Heart Disease Prediction API! Use the /predict endpoint to make predictions."})
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
