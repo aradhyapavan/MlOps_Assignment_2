@@ -1,6 +1,6 @@
 import joblib
 import shap
-from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
 
 # Load the best model pipeline
@@ -27,9 +27,9 @@ feature_names = ['age', 'sex', 'cp_1', 'cp_2', 'cp_3', 'trestbps', 'chol', 'fbs'
                  'restecg_1', 'thalach', 'exang', 'oldpeak', 'slope_1', 'slope_2', 'ca', 
                  'thal_3', 'thal_6', 'thal_7']
 
-# Check if the model is tree-based (for TreeExplainer) or non-tree-based (for KernelExplainer)
-if isinstance(model, (RandomForestClassifier, GradientBoostingClassifier)):
-    # Use SHAP's TreeExplainer for tree-based models
+# Check if the model is tree-based (for TreeExplainer)
+if isinstance(model, RandomForestClassifier):
+    # Use SHAP's TreeExplainer for RandomForest
     explainer = shap.TreeExplainer(model)
 else:
     # Use SHAP's KernelExplainer for non-tree-based models
