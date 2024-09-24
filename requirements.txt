@@ -12,3 +12,4 @@ shap==0.41.0
 lime==0.2.0.1
 matplotlib==3.7.1
 seaborn==0.12.2
+tpot==0.12.2
